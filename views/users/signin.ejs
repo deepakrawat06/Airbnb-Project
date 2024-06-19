@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate.ejs")  -%>
+
+<div class="row mt-5">
+  <div  class="col-md-4 offset-md-4 border border-dark rounded-4">
+    <h3 class="text-center mt-4">Signin</h3>
+    <form action="/login" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3 mt-3">
+        <label for="email">Email</label>
+        <input name="email" placeholder="Enter Email Here" type="email" class="form-control" autocomplete="email"  required />
+        <div class="invalid-feedback">Please choose a unique and valid email.</div>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="password">password</label>
+        <input name="password" placeholder="Enter password " pattern=".{8,}" Password must be at least 8 characters long. type="password" class="form-control" required />
+        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <button class="btn btn-danger add mt-3 mb-3">Signin</button>
+      <div>
+        <p> Don't have an account ? <span><a class="text-danger fs-5 link-underline link-underline-opacity-0" href="/signup">signup</a></span></p>
+      </div>
+    </form>
+  </div>
+</div>

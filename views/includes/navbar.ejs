@@ -1,0 +1,47 @@
+<style>
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem;
+  }
+
+  .search-btn{
+    border-radius: 25px;
+  }
+  .search-btn i {
+    display: inline;
+    margin-right: 5px;
+  }
+ 
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top border-bottom" style="height: 90px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb  text-danger fw-bold"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav fw-semibold">
+        <a class="nav-link fw-bold fs-5" href="/listings">airbnb</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex"  role="search">
+          <input class="form-control search-inp" id="search" type="search" name="search" placeholder="search" />
+          <button class="btn btn-danger ms-2 search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>search 
+          </button>
+        </form>
+      </div>
+
+      <div class="navbar-nav fw-semibold ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if( !currUser) { %>
+        <a class="nav-link fw-bold" href="/signup"><b>Signup</b></a>
+        <a class="nav-link fw-bold" href="/login"><b>Signin</b></a>
+        <% } %> <% if(currUser) {%>
+        <a class="nav-link text-danger" href="/logout"> logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,123 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  flex: 1;
+}
+
+
+.f-info-links a{
+   text-decoration: none;
+   color: #222222;
+}
+
+.f-info-links a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.f-info-links{
+  width: 100%;
+}
+
+.f-info-social{
+  width: 100%;
+  gap: 5px;
+  font-size: 1.5rem;
+}
+.f-info-social i {
+  margin-right: 1rem;
+}
+.f-info {
+  display: flex;
+ text-align: center;
+  background-color: #ebebeb;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 8rem;
+  position: sticky;
+  align-items: center;
+}
+
+.listing-card{
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  
+}
+.card-body{
+  padding: 0;
+}
+
+.card-text p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.list-link{
+  text-decoration: none;
+}
+
+.card-img-overlay{
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.3;
+  
+}
+
+.add{
+ width: 100%;
+}
+
+.edit{
+  width: 100%;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter {
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 3rem;
+  opacity: 0.7;
+}
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter-check{
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 3rem;
+}
+.tax-info{
+  display: none;
+}
+
+.filter-check{
+  border: 1px solid gray;
+  border-radius: 10px;
+  height: 3rem;
+  width: 20%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+#map {
+  height: 500px;
+  width: 1000px;
+}

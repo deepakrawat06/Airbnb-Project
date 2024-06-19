@@ -1,0 +1,95 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+
+<div id="filters">
+  <div class="filter">
+    <i class="fa-solid fa-fire"></i>
+    <div>
+      <p>Trending</p>
+    </div>
+  </div>
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-bed"></i>
+      <p>Rooms</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-mountain-sun"></i>
+      <p>Mountains</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-igloo"></i>
+      <p>Doms</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-mug-saucer"></i>
+      <p>breakfast</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-mountain-city"></i>
+      <p>Mountain-city</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-umbrella-beach"></i>
+      <p>beaches</p>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div>
+      <i class="fa-solid fa-mug-saucer"></i>
+      <p>breakfast</p>
+    </div>
+  </div>
+  <div class="form-check-reverse form-switch filter-check">
+    <label class="form-check-label fs-sm" for="flexSwitchCheckChecked">Display total before taxes</label>
+    <input class="form-check-input ms-2" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+  </div>
+</div>
+<div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 ">
+  <% for(let listing of allListings) {%>
+
+  <a href="/listings/<%= listing._id %> " class="list-link">
+    <div class="card listing-card ms-2" style="width: 20rem">
+      
+      <img src="<%= listing.image.url  %>" class="card-img-top" style="height: 20rem" alt="listing" />
+    
+      <div class="card-body ms-2">
+        <p class="card-text">
+          <b><%=listing.title %></b> <br />
+          &#8377;<%=listing.price%>/ night
+          <i class="tax-info"> &nbsp;&nbsp;+18% gst</i>
+        </p>
+      </div>
+    </div>
+  </a>
+  <% } %>
+</div>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckChecked");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>

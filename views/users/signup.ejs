@@ -1,0 +1,34 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+
+<div class="row mt-5  " >
+  <div class="col-md-4 offset-md-4 mt-3 border border-dark rounded-4">
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+        <h3 class="text-center mt-4">Signup</h3>
+      <div class="mb-3 mt-3">
+        <label for="username">Username <b><sup>*</sup></b></label>
+        <input name="username" id="username" placeholder="Enter name" type="text" class="form-control" autocomplete="username" required unique />
+        <div class="invalid-feedback">Please choose a unique and valid username.</div>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="email">Email address</label>
+        <input name="email" placeholder="Enter your email" type="email" class="form-control" required />
+        <div class="invalid-feedback">Please choose a unique and valid email.</div>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="password">Password</label>
+        <input name="password" placeholder="Enter password " type="password" pattern=".{8,}" min="8" class="form-control" required />
+        <div class="invalid-feedback">Please enter a valid password that is at least 10 characters</div>
+        <div class="valid-feedback">Looks good</div>
+      </div>
+      <button class="btn btn-danger add mt-3 mb-3">Add</button>
+     
+      <div>
+        <p> Already have an account ? <span><a class="text-danger fs-5 link-underline link-underline-opacity-0" href="/login">signin</a></span></p>
+      </div>
+    </form>
+  </div>
+</div>
