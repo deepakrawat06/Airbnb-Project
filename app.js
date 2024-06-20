@@ -11,6 +11,7 @@ const engine = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const dbUrl = process.env.ATLAS_DB;
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const listingRoute = require("./routes/listing.js");
 const reviewRoute = require("./routes/review.js");
 const userRoute = require("./routes/user.js");
@@ -42,8 +43,21 @@ app.use(methodOverride("_method"));
 app.engine("ejs", engine);
 app.use(express.static(path.join(__dirname, "/public")));
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+
+store.on("error", () => {
+  console.log("ERROR in MONGO-STORE", err);
+}); 
+
 app.use(
   session({
+    store,
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
