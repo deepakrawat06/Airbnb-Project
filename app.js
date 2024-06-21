@@ -77,7 +77,7 @@ app.use(passport.initialize());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(new LocalStrategy({ usernameField: "email" }, User.authenticate()));
 
 
 
