@@ -119,5 +119,5 @@ body{
 }
 
 @media screen and (max-width: 375px) {
-  #map { width: 300px; height: 300px; margin-left: 2rem;}
+  #map { width: 300px; height: 300px; }
 }
