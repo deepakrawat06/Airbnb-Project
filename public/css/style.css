@@ -78,10 +78,6 @@ body{
  width: 100%;
 }
 
-.edit{
-  width: 100%;
-}
-
 #filters {
   display: flex;
   flex-wrap: wrap;
@@ -118,6 +114,10 @@ body{
 }
 
 #map {
-  height: 500px;
-  width: 1000px;
+  height: 400px;
+  width: 800px;
+}
+
+@media screen and (max-width: 320px) {
+  #map { width: 300px; height: 300px;}
 }
