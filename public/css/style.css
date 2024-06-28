@@ -78,40 +78,6 @@ body{
  width: 100%;
 }
 
-#filters {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.filter {
-  text-align: center;
-  margin-top: 2rem;
-  margin-right: 3rem;
-  opacity: 0.7;
-}
-.filter:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.filter-check{
-  text-align: center;
-  margin-top: 2rem;
-  margin-right: 3rem;
-}
-.tax-info{
-  display: none;
-}
-
-.filter-check{
-  border: 1px solid gray;
-  border-radius: 10px;
-  height: 3rem;
-  width: 20%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-}
 
 #map {
   height: 400px;
@@ -120,4 +86,82 @@ body{
 
 @media screen and (max-width: 425px) {
   #map { width: 350px; height: 300px; margin-left: 2px; }
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter:hover {
+  background-color: #e0e0e0;
+}
+
+.filter i {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.filter span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .filter {
+    font-size: 12px;
+    /* padding: 6px 10px; */
+  }
+
+  .filter i {
+    font-size: 10
+  }
+}
+
+
+.filter-check {
+  text-align: center;
+  margin-top: 1rem; 
+  margin-right: 1rem; 
+  border: 1px solid gray;
+  border-radius: 10px;
+  height: 3rem;
+  min-width: 120px; 
+  max-width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.filter-check:hover {
+  background-color: #f0f0f0; 
+}
+
+.tax-info {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .filter-check {
+    height: 2.5rem; 
+    min-width: 90px; 
+    font-size: 14px; 
+  }
 }
