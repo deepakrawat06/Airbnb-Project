@@ -165,3 +165,17 @@ body{
     font-size: 14px; 
   }
 }
+
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem 0.5rem;
+}
+
+.search-btn{
+  border-radius: 25px;
+}
+.search-btn i {
+  display: inline;
+  margin-right: 5px;
+}
