@@ -5,8 +5,8 @@
     <h3 class="text-center mt-4">Signin</h3>
     <form action="/login" method="POST" class="needs-validation" novalidate>
       <div class="mb-3 mt-3">
-        <label for="email">Email</label>
-        <input name="email" placeholder="Enter Email Here" type="email" class="form-control" autocomplete="email"  required />
+        <label for="username">Username <b><sup>*</sup></b></label>
+        <input name="username" id="username" placeholder="Enter name" type="text" class="form-control" autocomplete="username" required unique />
         <div class="invalid-feedback">Please choose a unique and valid email.</div>
         <div class="valid-feedback">Looks good</div>
       </div>
